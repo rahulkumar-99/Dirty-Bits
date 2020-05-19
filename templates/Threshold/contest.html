@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="row pl-5">
+    <h1>{{contest.name}}</h1>
+</div>
+<div class="row pl-5">
+    <p>{{contest.start_date}} - {{contest.end_date}}</p>
+    <hr>
+    <p>{{contest.description}}</p>
+    <hr>
+</div>
+<div class="row pt">
+    {% for problem in contest.Problems.all %}
+    <div class="col-4 pt-4">
+        {% include 'Threshold/components/problem_card.html' %}
+    </div>
+    {% endfor %}
+</div>
+    
+
+{% endblock %}
